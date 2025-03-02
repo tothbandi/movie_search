@@ -1,0 +1,12 @@
+
+<div class="info">
+  This is a simple movie search application that allows you to search for movies by title.
+  For using you have to register to <%= link_to 'The Movie DB', url: 'https://developer.themoviedb.org/reference/search-movie'%>
+  and provide your API key at  <%= link_to 'Registration', new_user_path %>.
+  This application increases the number of available requests by caching the search results.
+  The number of requests when accessing <%= link_to 'The Movie DB', url: 'https://developer.themoviedb.org/reference/search-movie'%> is limited.
+</div>
+
+<h4>
+  Sign in below or <%= link_to 'Register', new_user_path %>
+</h4>
