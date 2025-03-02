@@ -7,3 +7,4 @@ en:
         email_address: Email address
         password: Password
         password_confirmation: Password confirmation
+        token: API Read Access Token
