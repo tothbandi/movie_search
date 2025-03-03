@@ -1,0 +1,11 @@
+<div class="movie">
+  <div class="movie-title"><%= movie['title'] %></div>
+  <div class="movie-container">
+    <% poster_path = movie['poster_path'] %>
+    <% path = poster_path ? "#{IMAGE_URL}w200#{movie['poster_path']}" : "placeholder.png" %>
+    <%= image_tag path, class: "image", alt: movie['title'] %>
+    <div class="overview">
+      <%= movie['overview'] %>
+    </div>
+  </div>
+</div>

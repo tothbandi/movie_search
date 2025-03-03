@@ -11,16 +11,27 @@
 
 body {
   font-family: 'Arial', 'Helvetica', sans-serif;
+  margin-top: 3rem;
 }
 
-.info {
-  font-size: larger;
-  margin: 0.5rem 0;
-  width: 33rem;
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.intro {
+  font-size: 18px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 50%;
+}
+
+.upper {
+  text-transform: uppercase;
 }
 
 .sign-field, .actions {
-  height: 1.5rem;
+  height: 32px;
   margin: 0.5rem 0;
 }
 
@@ -28,6 +39,7 @@ body {
   display: inline-block;
   margin-bottom: 0.2rem;
   width: 12rem;
+  text-align: right;
 }
 
 .sign-field input[type="text"],
@@ -39,3 +51,208 @@ body {
 .actions input[type="submit"] {
   width: 10rem;
 }
+
+
+.page-title {
+  font-weight: bold;
+  font-size: 32px;
+  margin: 40px;
+}
+
+.search-block {
+  margin: 0 auto;
+}
+
+.info-bar {
+  height: 18px;
+  padding: 23px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.search-label, .search-keywords {
+  height: 32px;
+  font-size: 18px;
+}
+
+.search-keywords, .search-button {
+  border-radius: 5px;
+}
+
+.search-keywords {
+  width: 33%;
+}
+
+.search-button {
+  height: 38px;
+  font-size: 18px;
+}
+
+.movies, .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.movie {
+  margin: 10px;
+  width: 400px;
+  height: 332px;
+  border: 3px double #047773;
+  border-radius: 10px;
+}
+
+.movie-title {
+  height: 24px;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 6px;
+  border-bottom: 1px solid #047773;
+  overflow-x:auto;
+}
+
+.movie-container {
+  display: flex;
+  height: 300px;
+}
+
+.image {
+  display: inline-block;
+  height: auto;
+  max-width: 50%;
+  border-radius: 5px 0 0 5px;
+}
+
+.overview {
+  display: inline-block;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.pagination .page {
+  margin: 2px;
+  height: 38px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+.pagination .active {
+  color: white;
+  background-color: #cccccc;
+}
+
+.upper-right-corner {
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+}
+/*
+html, body {
+  background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%);
+  font-family: 'Helvetica', sans-serif;
+  color: #0ccac4;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  font-size: 32px;
+  color: #0ccac4;
+  margin: 40px;
+}
+
+.search-block {
+  margin: 0 auto;
+}
+
+.search-label, .search-keywords {
+   height: 32px;
+   font-size: 18px;
+}
+
+.search-label, .search-button {
+  display: inline-block;
+  width: 150px;
+  color: #0ccac4;
+}
+
+.search-keywords {
+  width: 450px;
+}
+
+.search-button {
+  height: 38px;
+  background-color: #074152;
+  font-size: 18px;
+}
+
+.info-bar {
+  height: 18px;
+  padding: 23px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.movies, .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.movie {
+  margin: 10px;
+  width: 400px;
+  height: 332px;
+  border: 3px double #047773;
+  border-radius: 10px;
+}
+
+.movie-title {
+  height: 24px;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 6px;
+  border-bottom: 1px solid #047773;
+  overflow-x:auto;
+}
+
+.movie-container {
+  display: flex;
+  height: 300px;
+}
+
+.image {
+  display: inline-block;
+  height: auto;
+  max-width: 50%;
+  border-radius: 5px 0 0 5px;
+}
+
+.overview {
+  display: inline-block;
+  padding: 10px;
+  overflow-y: auto;
+  color: #0ccac4;
+}
+
+.page {
+  margin: 2px;
+  height: 38px;
+  background-color: #074152;
+  font-size: 18px;
+  color: #0ccac4;
+}
+
+.active {
+  color: #074152;
+  background-color: #0ccac4;
+}
+  */

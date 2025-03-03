@@ -1,0 +1,21 @@
+
+<div class="intro center upper">
+  welcome!
+</div>
+<div class="intro center">
+  This is an enhanced movie search application that connects to The Movie DB (TMDB).
+</div>
+<div class="intro center">
+  For using please register into the:  <%= link_to 'The Movie DB (TMDB)', url: 'https://developer.themoviedb.org/reference/search-movie'%>
+  and provide your <b>API Read Access Token</b> at <%= link_to 'registration', new_user_path, class: "upper" %>.
+</div>
+<div class="intro center">
+  The number of the requests, when accessing <%= link_to 'The Movie DB (TMDB)', url: 'https://developer.themoviedb.org/reference/search-movie'%> is limited, so
+  this application increases the number of available requests by caching the search results.
+</div>
+<div class="intro center upper">
+  Happy surfing in the movie world!
+</div>
+<h4 class="center">
+  SING IN below or <%= link_to 'register', new_user_path, class: "upper" %>
+</h4>

@@ -1,0 +1,45 @@
+<div class='pagination'>
+  <%= form_with url: movie_searches_path, method: :get do |form| %>
+    <%= form.hidden_field :keywords, value: @keywords %>
+    <%= form.hidden_field :page, value: 1 %>
+    <%= form.button 'First', class: 'page' %>
+  <% end %>
+  <% if @page > 1 %>
+    <%= form_with url: movie_searches_path, method: :get do |form| %>
+      <%= form.hidden_field :keywords, value: @keywords %>
+      <%= form.hidden_field :page, value: @page - 1 %>
+      <%= form.button 'Prev', class: 'page' %>
+    <% end %>
+  <% end %>
+  <% if 3 < @page && @pages > 5 %>
+    <%= button_tag '...', class: 'page' %>
+  <% end %>
+  <% (1..@pages).each do |page| %>
+    <% if page < @page - 2 %>
+      <% next %>
+    <% end %>
+    <% if page > @page + 2 %>
+      <% next %>
+    <% end %>
+    <%= form_with url: movie_searches_path, method: :get do |form| %>
+      <%= form.hidden_field :keywords, value: @keywords %>
+      <%= form.hidden_field :page, value: page %>
+      <%= form.button page, class: "page#{@page == page ? ' active' : ''}" %>
+    <% end %>
+  <% end %>
+  <% if @page < @pages - 2 && @pages > 5 %>
+    <%= button_tag '...', class: 'page' %>
+  <% end %>
+  <% if @page < @pages %>
+    <%= form_with url: movie_searches_path, method: :get do |form| %>
+      <%= form.hidden_field :keywords, value: @keywords %>
+      <%= form.hidden_field :page, value: @page + 1 %>
+      <%= form.button 'Next', class: 'page' %>
+    <% end %>
+  <% end %>
+  <%= form_with url: movie_searches_path, method: :get do |form| %>
+    <%= form.hidden_field :keywords, value: @keywords %>
+    <%= form.hidden_field :page, value: @pages %>
+    <%= form.button 'Last', class: 'page' %>
+  <% end %>
+</div>
