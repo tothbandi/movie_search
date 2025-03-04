@@ -1,9 +1,12 @@
 class User < ApplicationRecord
   has_secure_password
 
+  normalizes :email_address, with: ->(e) { e.strip.downcase }
+
   encrypts :api_token
 
-  has_many :sessions, dependent: :destroy
+  validates :email_address, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }
+  validates :password, presence: true, confirmation: true
 
-  normalizes :email_address, with: ->(e) { e.strip.downcase }
+  has_many :sessions, dependent: :destroy
 end

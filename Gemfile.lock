@@ -379,6 +379,7 @@ DEPENDENCIES
   jbuilder
   jwt
   kamal
+  minitest
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
