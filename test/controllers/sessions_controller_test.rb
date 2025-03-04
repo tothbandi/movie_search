@@ -11,9 +11,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create session with valid credentials" do
-    post session_url, params: { email_address: @user.email_address, password: 'password' }
+    post session_url, headers: {"User-Agent" => "useragent"}, params: { email_address: @user.email_address, password: 'password' }
     assert_redirected_to new_movie_search_url
-    assert_equal request.user_agent, session[:user_agent]
+    assert_equal request.user_agent, User.last.sessions.last[:user_agent]
   end
 
   test "should not create session with invalid credentials" do
