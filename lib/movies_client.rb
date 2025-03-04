@@ -36,7 +36,7 @@ class MoviesClient
 
       request = Net::HTTP::Get.new(uri)
       request['accept'] = 'application/json'
-      request['Authorization'] = "Bearer #{Current.user.token}"
+      request['Authorization'] = "Bearer #{Current.user.api_token}"
 
       http_logger.info "GET #{ uri.to_s }"
       begin

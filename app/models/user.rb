@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  encrypts :token
+  encrypts :api_token
 
   has_many :sessions, dependent: :destroy
 

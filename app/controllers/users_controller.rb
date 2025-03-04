@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       start_new_session_for(@user)
-      pp @user.sessions.last
       redirect_to root_path, notice: "You've successfully signed up. Welcome!"
     else
       flash[:alert] = @user.errors.full_messages.join(", ")
@@ -20,6 +19,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email_address, :password, :password_confirmation, :token)
+    params.require(:user).permit(:email_address, :password, :password_confirmation, :api_token)
   end
 end
