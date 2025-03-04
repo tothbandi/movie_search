@@ -10,7 +10,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('User.count') do
       post users_url, params: { user: { email_address: 'newuser@example.com', password: 'password', password_confirmation: 'password' } }
     end
-    assert_redirected_to root_url
+    assert_redirected_to new_movie_search_url
     assert_not_nil cookies[:session_id]
     assert_equal request.user_agent, session[:user_agent]
   end

@@ -1,0 +1,19 @@
+<%= form_with(url: session_path) do |form| %>
+  <%= tag.h1 "sign in", class: "upper" %>
+  <%= tag.div(class: "sign-field") do %>
+    <%= form.label :email_address%>
+    <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
+  <% end %>
+  <%= tag.div(class: "sign-field") do %>
+    <%= form.label :password %>
+    <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
+  <% end %>
+  <%= tag.div(class: "actions") do %>
+    <%= form.submit "Send" %>
+  <% end %>
+<% end %>
+<%= tag.div(class: "sign-field ") do %>
+  or <%= link_to 'register', new_user_path, class: "upper" %>
+<% end %>
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>

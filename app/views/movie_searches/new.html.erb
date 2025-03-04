@@ -1,5 +1,14 @@
-<div class="upper-right-corner upper"><%= link_to 'Sign Out', session_path, data: { turbo_method: :delete } %></div>
-<div class="page-title center">Search in The Movie Database (TMDB)</div>
-<div class="search-block center"><%= render 'movie_searches/search' %></div>
-<div class="info-bar"><%= flash[:notice] %></div>
+<%= tag.div(class: %w(upper-right-corner upper)) do %>
+  <%= link_to 'Sign Out', session_path, data: { turbo_method: :delete } %>
+<% end %>
+<%= tag.div(class: %w(container column)) do %>
+  <%= tag.h1 "Search in The Movie Database (TMDB)", class: %w(page-title) %>
+  <%= tag.div(class: "search-block") do %>
+    <%= render 'movie_searches/search' %>
+  <% end %>
+  <%= tag.div(class: "info-bar") do %>
+    <%= flash[:notice] %>
+  <% end %>
+<% end %>
 <%= render 'movie_searches/movies' if @movies %>
+<%= tag.br %>
