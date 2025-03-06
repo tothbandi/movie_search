@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   encrypts :api_token
 
-  validates :email_address, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }
+  validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email address" }
   validates :password, presence: true, confirmation: true
 
   has_many :sessions, dependent: :destroy
