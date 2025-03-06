@@ -28,7 +28,8 @@ body {
   margin: 0.5rem 0;
 }
 
-.sign-field label {
+.sign-field label,
+.field_with_errors {
   display: inline-block;
   width: 16rem;
 }

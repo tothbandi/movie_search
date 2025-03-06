@@ -2,7 +2,7 @@ class MovieSearchesController < ApplicationController
   def new; end
 
   def index
-    data     = MoviesClient.search permitted_params[:keywords], permitted_params[:page]
+    data     = MoviesClient.search(permitted_params[:keywords], permitted_params[:page])
     response = data[:response]
     result   = JSON.parse response.body
 

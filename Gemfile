@@ -62,4 +62,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem 'minitest'
+  gem 'simplecov'
+  gem "rails-controller-testing"
 end
