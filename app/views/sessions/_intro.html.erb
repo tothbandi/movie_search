@@ -4,10 +4,10 @@
   This is an enhanced movie search application that connects to The Movie DB (TMDB).
 <% end %>
 <%= tag.div(class: "intro") do %>
-  For using please register into the:  <%= link_to 'The Movie DB (TMDB)', url: 'https://developer.themoviedb.org/reference/search-movie'%>
-  and provide your <b>API Read Access Token</b> at <%= link_to 'registration', new_user_path, class: "upper" %>.<% end %>
+  For using please register into the:  <%= link_to "The Movie DB (TMDB)", url: "https://developer.themoviedb.org/reference/search-movie"%>
+  and provide your <b>API Read Access Token</b> at <%= link_to "registration", new_user_path, class: "upper" %>.<% end %>
 <%= tag.div(class: "intro") do %>
-  The number of the requests, when accessing <%= link_to 'The Movie DB (TMDB)', url: 'https://developer.themoviedb.org/reference/search-movie'%> is limited, so
+  The number of the requests, when accessing <%= link_to "The Movie DB (TMDB)", url: "https://developer.themoviedb.org/reference/search-movie"%> is limited, so
   this application increases the number of available requests by caching the search results.<% end %>
 <%= tag.h2(class: "intro" ) do %>
   Happy surfing in the movie world!

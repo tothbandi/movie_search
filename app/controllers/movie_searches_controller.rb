@@ -6,13 +6,13 @@ class MovieSearchesController < ApplicationController
     response = data[:response]
     result   = JSON.parse response.body
 
-    if response.code == '200'
+    if response.code == "200"
       @keywords = permitted_params[:keywords]
-      @movies   = result['results']
+      @movies   = result["results"]
       @count    = data[:counter].to_i
       @cached   = data[:cached]
-      @page     = result['page'].to_i
-      @pages    = result['total_pages'].to_i
+      @page     = result["page"].to_i
+      @pages    = result["total_pages"].to_i
 
       flash[:notice] = info @count, @cached
     else
@@ -27,8 +27,8 @@ class MovieSearchesController < ApplicationController
     params.permit(:keywords, :page)
   end
 
-  def info count, cached
-    source = 'TMDB'
+  def info(count, cached)
+    source = "TMDB"
     source = "CACHE #{ @count } time(s)" if @cached
     "Info downloaded from #{ source }."
   end

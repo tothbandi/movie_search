@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
-  resources :movie_searches, only: [:new, :index]
+  resource :session, only: [ :new, :create, :destroy ]
+  resources :users, only: [ :new, :create ]
+  resources :movie_searches, only: [ :new, :index ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

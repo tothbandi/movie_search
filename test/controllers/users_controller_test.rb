@@ -7,8 +7,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create user with valid attributes" do
-    assert_difference('User.count') do
-      post users_url, headers: {"User-Agent" => "useragent"}, params: { user: { email_address: 'newuser@example.com', password: 'password', password_confirmation: 'password' } }
+    assert_difference("User.count") do
+      post users_url, headers: {"User-Agent" => "useragent"}, params: { user: { email_address: "newuser@example.com", password: "password", password_confirmation: "password" } }
     end
     assert_redirected_to new_movie_search_url
     assert_not_nil cookies[:session_id]
@@ -16,8 +16,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not create user with invalid attributes" do
-    assert_no_difference('User.count') do
-      post users_url, params: { user: { email_address: 'invalid', password: 'password', password_confirmation: 'mismatch' } }
+    assert_no_difference("User.count") do
+      post users_url, params: { user: { email_address: "invalid", password: "password", password_confirmation: "mismatch" } }
     end
     assert_response :unprocessable_entity
     assert_select "li", "Password confirmation doesn't match Password"

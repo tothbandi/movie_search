@@ -1,5 +1,5 @@
 <%= form_with url: movie_searches_path, method: :get do |form| %>
-  <%= form.label :keywords, 'Search for: ', class: 'search-label' %>
-  <%= form.text_field :keywords, required: true, class: 'search-keywords', value: @keywords %>
-  <%= form.button 'Search', name: nil, class: 'search-button' %>
+  <%= form.label :keywords, "Search for: ", class: "search-label" %>
+  <%= form.text_field :keywords, required: true, class: "search-keywords", value: @keywords %>
+  <%= form.button "Search", name: nil, class: "search-button" %>
 <% end %>

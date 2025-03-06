@@ -1,11 +1,10 @@
 class Logger < ::Logger
-
-  def initialize *arguments
+  def initialize(*arguments)
     super
     @formatter ||= Formatter.new
   end
 
-  def error msg, &block
+  def error(msg, &block)
     super if msg
   end
 
@@ -14,9 +13,9 @@ class Logger < ::Logger
   class Formatter
     # <severity[0]> [<time> #<pid>] <severity> -- <progname>: <message>\n
     LOG_FORMAT  = "%s, [%s #%d] %5s -- %s: %s\n".freeze
-    TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%6N'.freeze
+    TIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%6N".freeze
 
-    def call severity, time, progname, message
+    def call(severity, time, progname, message)
       LOG_FORMAT % [ severity[0],
                      format_time(time),
                      $$,
@@ -27,7 +26,7 @@ class Logger < ::Logger
 
     private
 
-      def format_time time
+      def format_time(time)
         time.strftime(TIME_FORMAT)
       end
 

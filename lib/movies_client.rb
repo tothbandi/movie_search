@@ -1,12 +1,12 @@
-require 'uri'
-require 'net/http'
-require 'logger'
+require "uri"
+require "net/http"
+require "logger"
 
 ##
 # This class responsible to process movies list
 class MoviesClient
   class << self
-    def search keywords, page = 1
+    def search(keywords, page = 1)
       cached = true
       response = Rails.cache.fetch("#{keywords} page:#{page}", expires_in: 2.minutes) do
         cached = false
@@ -17,7 +17,7 @@ class MoviesClient
 
     private
 
-    def counter keywords, page, cached
+    def counter(keywords, page, cached)
       count = Rails.cache.read("#{keywords} page:#{page} counter") || -1
       count = -1 unless cached
       count = count + 1
@@ -25,7 +25,7 @@ class MoviesClient
       count
     end
 
-    def get_movies keywords, page
+    def get_movies(keywords, page)
       uri = URI(MOVIE_URL)
 
       params = { query: keywords }
@@ -36,10 +36,10 @@ class MoviesClient
       http.use_ssl = true
 
       request = Net::HTTP::Get.new(uri)
-      request['accept'] = 'application/json'
-      request['Authorization'] = "Bearer #{Current.user.api_token}"
+      request["accept"] = "application/json"
+      request["Authorization"] = "Bearer #{Current.user.api_token}"
 
-      http_logger.info "GET #{ uri.to_s }"
+      http_logger.info "GET #{ uri }"
       begin
         response = http.request(request)
         http_logger.info "#{ response.code } #{ response.message }"
@@ -54,4 +54,3 @@ class MoviesClient
     end
   end
 end
-
